@@ -3,24 +3,66 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registeration</title>
+    <title>Registration</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        form {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        input[type=text],
+        input[type=email],
+        input[type=password] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        button {
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            background-color: #5cb85c;
+            color: white;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #4cae4c;
+        }
+        .messages {
+            margin-top: 20px;
+        }
+        .messages h3 {
+            color: red;
+            text-align: center;
+        }
+    </style>
 </head>
 <body>
     <form action="register" method="post">
         {% csrf_token %}
-        <!-- {{ form.as_p }} -->
-
         <input type="text" name="first_name" placeholder="First Name"><br>
         <input type="text" name="last_name" placeholder="Last Name"><br>
         <input type="text" name="username" placeholder="Username"><br>
         <input type="email" name="email" placeholder="Email"><br>
         <input type="password" name="password1" placeholder="Password"><br>
-        <input type="password" name="password2" placeholder="Confrim password"><br>
+        <input type="password" name="password2" placeholder="Confirm Password"><br>
         <button type="submit">Register</button>
-
     </form>
 
-    <div> 
+    <div class="messages"> 
         {% for message in messages %}
         <h3> {{message}}</h3>
         {% endfor %}
