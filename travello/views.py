@@ -8,3 +8,4 @@ def index(request):
 
 def search(request):
     pass
+
