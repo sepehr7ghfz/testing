@@ -5,3 +5,6 @@ from django.http import HttpResponse
 
 def index(request):
     return render(request, "travello/index.html")
+
+def search(request):
+    pass
